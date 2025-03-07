@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Variable.ttf");
+}
+
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-*: initial;
+
+  --breakpoint-*: initial;
+  --breakpoint-md: 28.25rem;
+  --breakpoint-lg: 62.5rem;
+
+  --radius: 0.625rem;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --black: oklch(0% 0 0);
+  --white: oklch(100% 0 0);
+
+  --border: oklch(83.67% 0.0113 274.87);
+  --input: oklch(83.67% 0.0113 274.87);
+  --separator: oklch(91.36% 0.011 274.88);
+
+  --gray-500: oklch(34.82% 0.0166 266.46);
+  --gray-400: oklch(53.14% 0.0246 268.22);
+  --gray-300: oklch(59.33% 0.0207 268.95);
+  --gray-200: oklch(92.51% 0.0084 271.32);
+  --gray-100: oklch(97.67% 0.0026 286.35);
+
+  --destructive: oklch(59.85% 0.2202 30.52);
+
+  --primary: oklch(54.71% 0.1558 148.49);
+  --primary-foreground: oklch(100% 0 0);
+  --primary-hover: oklch(60.45% 0.1732 148.27);
+  --primary-pressed: oklch(48.82% 0.1378 148.77);
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-white: var(--white);
+
+  --color-background: var(--white);
+  --color-foreground: var(--black);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-foreground: var(--gray-400);
+  --color-input-label: var(--gray-400);
+  --color-separator: var(--separator);
+
+  --color-gray-500: var(--gray-500);
+  --color-gray-400: var(--gray-400);
+  --color-gray-300: var(--gray-300);
+  --color-gray-200: var(--gray-200);
+  --color-gray-100: var(--gray-100);
+
+  --color-destructive: var(--destructive);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-pressed: var(--primary-pressed);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
